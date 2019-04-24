@@ -3,7 +3,8 @@ import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 import Todo from './components/TodoComponents/Todo';
 
-let addedTask ='';
+let addedTask = '';
+
 const itemsTodo = [
   {
     task: 'Organize Garage',
@@ -32,7 +33,7 @@ class App extends React.Component {
   addTodo = event => {
     event.preventDefault();
     this.setState({
-      todos: [...itemsTodo,
+      todos: [...this.state.todos,
         {
         task:  addedTask,
         id: Date.now(),
@@ -40,14 +41,16 @@ class App extends React.Component {
       }
       ]
     });
-    addedTask = '';
   }
+
+
 
   handleChange = event => {
      addedTask = event.target.value;
   }
 
   render() {
+
     return (
       <div>
         <h2>Todo App!</h2>
