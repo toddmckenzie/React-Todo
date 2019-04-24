@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
-
+import Todo from './components/TodoComponents/Todo';
 
 const itemsTodo = [
   {
@@ -26,12 +26,17 @@ class App extends React.Component {
         todos: itemsTodo
       }
     }
+  handleChange = () => {
+    console.log('hi')
+  }
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList todos={itemsTodo}/>
-        <TodoForm />
+        <Todo />
+        <TodoForm onChange={this.handleChange}/>
       </div>
     );
   }
