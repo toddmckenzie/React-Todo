@@ -3,13 +3,17 @@ import './Todo.css'
 
 
 const Todo = (props) => {
+  let classNames = 'task';
+  if (props.item.completed){
+    classNames += ' taskCompleted'
+  }
 
   function toggle() {
     props.toggleTodo(props.item.id);
   }
 
   return (
-      <p className="task" onClick={toggle}>{props.item}</p>
+      <p onClick={toggle} className={classNames}>{props.item.task}</p>
     )
 }
 

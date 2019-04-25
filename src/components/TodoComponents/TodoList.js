@@ -16,10 +16,10 @@ const TodoList = (props) => {
 const TodoList = (props) => {
   return (
     <div>{props.todos.map(item =>
-      <Todo item={item.task} key={item.id} toggleTodo={props.toggleTodo}  />
+      <Todo item={item} key={item.id} toggleTodo={props.toggleTodo}  />
     )}</div>
   )
 }
-
+// use to say item ={item.task}
 
 export default TodoList;

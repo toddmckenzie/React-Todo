@@ -27,3 +27,9 @@ button:hover {
 .clear {
   margin-top: 20px;
 }
+
+
+.taskCompleted {
+  text-decoration: line-through;
+  color: black;
+}
