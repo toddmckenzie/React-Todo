@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import './index.css'
 //import Todo from './components/TodoComponents/Todo';
 
 let addedTask = '';
@@ -53,8 +54,8 @@ class App extends React.Component {
     });
   }
 
-  toggleCompleted = id => {
-    console.log(this.state.todos.id)
+  toggleCompleted = event => {
+    console.log(this.state.todos.completed)
 };
 
 
@@ -69,7 +70,7 @@ class App extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="container">
         <h2>Todo App!</h2>
         <TodoList todos={this.state.todos} toggleTodo={this.toggleCompleted} />
         {/*<Todo toggleTodo={this.toggleCompleted} />*/}
