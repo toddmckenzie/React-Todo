@@ -13,9 +13,19 @@ const itemsTodo = [
   },
   {
     task: 'Bake Cookies',
-    id: 1528817084358,
-    completed: false
+    id: 1528817224358,
+    completed: true
   },
+  {
+  task: 'Organize Garage',
+  id: 1528813377286,
+  completed: false
+  },
+  {
+  task: 'sleep',
+  id: 1528844084358,
+  completed: true
+  }
 
 ];
 
@@ -43,7 +53,19 @@ class App extends React.Component {
     });
   }
 
+  toggleCompleted = event => {
+    console.log(event.target)
+    //event.preventDefault();
+    /*this.setState({
+      this.state.todos.completed = !(this.state.todos.completed)
+    })*/
+    //console.log(this.state.todos.completed)
+  }
 
+  clearCompleted = event => {
+    //console.log(this.state.todos.filter(item => item.completed));
+    this.setState({  todos: this.state.todos.filter(item => !item.completed )})
+  }
 
   handleChange = event => {
      addedTask = event.target.value;
@@ -55,8 +77,8 @@ class App extends React.Component {
       <div>
         <h2>Todo App!</h2>
         <TodoList todos={this.state.todos}/>
-        <Todo />
-        <TodoForm add={this.addTodo} handle={this.handleChange}/>
+        <Todo toggleTodo={this.toggleCompleted} />
+        <TodoForm add={this.addTodo} handle={this.handleChange} clearCompleted={this.clearCompleted}/>
       </div>
     );
   }
