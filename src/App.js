@@ -4,8 +4,6 @@ import TodoList from './components/TodoComponents/TodoList';
 import './index.css'
 //import Todo from './components/TodoComponents/Todo';
 
-let addedTask = '';
-
 const itemsTodo = [
   {
     task: 'Organize Garage',
@@ -72,9 +70,8 @@ class App extends React.Component {
   }
 
   handleChange = event => {
-     //addedTask = event.target.value;
      this.setState({ task: event.target.value })
-     //this.setState({ input: ''});
+
   }
 
   render() {
@@ -83,7 +80,6 @@ class App extends React.Component {
       <div className="container">
         <h2>Todo App!</h2>
         <TodoList todos={this.state.todos} toggleTodo={this.toggleCompleted} />
-        {/*<Todo toggleTodo={this.toggleCompleted} />*/}
         <TodoForm add={this.addTodo} handle={this.handleChange} clearCompleted={this.clearCompleted} task={this.state.task}/>
       </div>
     );

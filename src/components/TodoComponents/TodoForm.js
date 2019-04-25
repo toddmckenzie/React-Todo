@@ -3,10 +3,6 @@ import './Todo.css'
 
 const TodoForm = props => {
 
-/*  function handleSubmit() {
-    event.preventDefault();
-    this.setState({ input: '' })
-  } */
 
   return (
     <div className="form">
@@ -19,5 +15,4 @@ const TodoForm = props => {
   )
 }
 
-// was onsubmit={props.add}  value={props.task}
 export default TodoForm;
