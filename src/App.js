@@ -37,8 +37,10 @@ class App extends React.Component {
     constructor(){
       super();
       this.state = {
-        todos: itemsTodo
+        todos: itemsTodo,
+        task: ''
       }
+
     }
 
   addTodo = event => {
@@ -46,11 +48,12 @@ class App extends React.Component {
     this.setState({
       todos: [...this.state.todos,
         {
-        task:  addedTask,
+        task:  this.state.task,
         id: Date.now(),
         completed: false
       }
-      ]
+    ],
+      task: ''
     });
   }
 
@@ -69,7 +72,9 @@ class App extends React.Component {
   }
 
   handleChange = event => {
-     addedTask = event.target.value;
+     //addedTask = event.target.value;
+     this.setState({ task: event.target.value })
+     //this.setState({ input: ''});
   }
 
   render() {
@@ -79,7 +84,7 @@ class App extends React.Component {
         <h2>Todo App!</h2>
         <TodoList todos={this.state.todos} toggleTodo={this.toggleCompleted} />
         {/*<Todo toggleTodo={this.toggleCompleted} />*/}
-        <TodoForm add={this.addTodo} handle={this.handleChange} clearCompleted={this.clearCompleted}/>
+        <TodoForm add={this.addTodo} handle={this.handleChange} clearCompleted={this.clearCompleted} task={this.state.task}/>
       </div>
     );
   }

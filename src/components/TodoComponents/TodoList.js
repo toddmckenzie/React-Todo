@@ -3,15 +3,7 @@
 import React from 'react';
 import Todo from './Todo';
 
-/*  this works.
-const TodoList = (props) => {
-  return (
-    <div>{props.todos.map(item =>
-      <p>{item.task}</p>
-    )}</div>
-  )
-}
-*/
+
 
 const TodoList = (props) => {
   return (
