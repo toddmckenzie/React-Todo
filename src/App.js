@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
-import Todo from './components/TodoComponents/Todo';
+//import Todo from './components/TodoComponents/Todo';
 
 let addedTask = '';
 
@@ -17,7 +17,7 @@ const itemsTodo = [
     completed: true
   },
   {
-  task: 'Organize Garage',
+  task: 'Sweep Garage',
   id: 1528813377286,
   completed: false
   },
@@ -53,17 +53,12 @@ class App extends React.Component {
     });
   }
 
-  toggleCompleted = event => {
-    console.log(event.target)
-    //event.preventDefault();
-    /*this.setState({
-      this.state.todos.completed = !(this.state.todos.completed)
-    })*/
-    //console.log(this.state.todos.completed)
-  }
+  toggleCompleted = id => {
+    console.log(this.state.todos.id)
+};
+
 
   clearCompleted = event => {
-    //console.log(this.state.todos.filter(item => item.completed));
     this.setState({  todos: this.state.todos.filter(item => !item.completed )})
   }
 
@@ -76,8 +71,8 @@ class App extends React.Component {
     return (
       <div>
         <h2>Todo App!</h2>
-        <TodoList todos={this.state.todos}/>
-        <Todo toggleTodo={this.toggleCompleted} />
+        <TodoList todos={this.state.todos} toggleTodo={this.toggleCompleted} />
+        {/*<Todo toggleTodo={this.toggleCompleted} />*/}
         <TodoForm add={this.addTodo} handle={this.handleChange} clearCompleted={this.clearCompleted}/>
       </div>
     );
