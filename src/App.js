@@ -54,11 +54,11 @@ class App extends React.Component {
     });
   }
 
-  toggleCompleted = (id) => {
+  toggleCompleted = id => {
+
     this.setState({
       todos: this.state.todos.map(item =>
-        console.log(item.completed)
-        //item.id === id ? [ ...item, completed: item.completed ]: item
+        item.id === id ? { ...item, completed: !item.completed } : item
       )
     });
 };
